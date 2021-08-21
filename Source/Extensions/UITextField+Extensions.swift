@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: - Properties
 
-extension UITextField {
+public extension UITextField {
     
     public typealias TextFieldConfig = (UITextField) -> Swift.Void
     
@@ -10,7 +10,7 @@ extension UITextField {
         configurate?(self)
     }
     
-    func left(image: UIImage?, color: UIColor = .black) {
+    public func left(image: UIImage?, color: UIColor = .black) {
         if let image = image {
             leftViewMode = UITextField.ViewMode.always
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
@@ -25,7 +25,7 @@ extension UITextField {
         }
     }
     
-    func right(image: UIImage?, color: UIColor = .black) {
+    public func right(image: UIImage?, color: UIColor = .black) {
         if let image = image {
             rightViewMode = UITextField.ViewMode.always
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
@@ -48,12 +48,12 @@ public extension UITextField {
     /// Set placeholder text color.
     ///
     /// - Parameter color: placeholder text color.
-    func setPlaceHolderTextColor(_ color: UIColor) {
+    public func setPlaceHolderTextColor(_ color: UIColor) {
         self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: color])
     }
     
     /// Set placeholder text and its color
-    func placeholder(text value: String, color: UIColor = .red) {
+    public func placeholder(text value: String, color: UIColor = .red) {
         self.attributedPlaceholder = NSAttributedString(string: value, attributes: [ NSAttributedString.Key.foregroundColor : color])
     }
 }
